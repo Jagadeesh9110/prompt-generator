@@ -38,7 +38,7 @@ To run this project locally, follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-username/prompt-generator-app.git](https://github.com/your-username/prompt-generator-app.git)
+    git clone https://github.com/Jagadeesh9110/prompt-generator.git
     cd prompt-generator-app
     ```
 
