@@ -3,7 +3,6 @@
 
 A simple yet powerful web application that transforms basic ideas into sophisticated, well-structured prompts for Large Language Models (LLMs) using advanced prompt engineering techniques.
 
-*(Optional: Replace this line with a screenshot of your app, like this: `![Screenshot of the Prompt Generator App](https://your-image-url.com/screenshot.png)`)*
 
 ---
 
