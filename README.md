@@ -1,18 +1,20 @@
-
 # AI-Powered Prompt Generator
 
 A simple yet powerful web application that transforms basic ideas into sophisticated, well-structured prompts for Large Language Models (LLMs) using advanced prompt engineering techniques.
 
+---
+
+## 🚀 Live Demo
+
+You can visit and use the live version of the application here:
+
+**[Visit the Prompt Generator](https://prompt-generator.onrender.com)**
+
+*(Note: Replace the URL above with your actual URL from the Render dashboard.)*
 
 ---
 
-##  Description
-
-This project is a full-stack application built with a **Node.js** and **Express** back-end and a simple HTML/CSS/JS front-end. It takes a user's simple context or idea and uses the **Google Gemini API** to generate a detailed, high-quality prompt. The core logic is powered by a "meta-prompt" that instructs the AI to act as an expert prompt engineer, following a structured framework (Task, Context, References) to produce creative and effective results.
-
----
-
-##  Features
+## ✨ Features
 
 -   **Simple & Intuitive UI:** A clean interface for users to input their ideas.
 -   **Advanced Prompt Engineering:** Utilizes a sophisticated meta-prompt to generate high-quality, structured prompts.
@@ -22,23 +24,32 @@ This project is a full-stack application built with a **Node.js** and **Express*
 
 ---
 
-## 🛠 Tech Stack
+## 🛠️ Tech Stack
 
--   **Front-End:** HTML, CSS,  JavaScript
+-   **Front-End:** HTML, CSS, Vanilla JavaScript
 -   **Back-End:** Node.js, Express.js
 -   **AI Model:** Google Gemini API (`gemini-1.5-flash-latest`)
--   **Deployment:** Render (or any other Node.js hosting service)
+-   **Deployment:** Render
 
 ---
 
-## ⚙️ Setup and Installation
+## Usage
 
-To run this project locally, follow these steps:
+1.  **Visit the live site** at the link provided in the "Live Demo" section.
+2.  In the text area, type a simple idea or context for the prompt you want to generate (e.g., "a thank you email to my team after a successful project").
+3.  Click the "Generate Prompt" button.
+4.  The application will display a detailed, well-structured prompt in the results area, ready for you to copy and use with any LLM.
+
+---
+
+## ⚙️ Local Setup and Installation (For Developers)
+
+If you want to run this project on your local machine, follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/Jagadeesh9110/prompt-generator.git
-    cd prompt-generator-app
+    git clone [https://github.com/Jagadeesh9110/prompt-generator.git](https://github.com/Jagadeesh9110/prompt-generator.git)
+    cd prompt-generator
     ```
 
 2.  **Install dependencies:**
@@ -58,13 +69,4 @@ To run this project locally, follow these steps:
     node server.js
     ```
 
-5.  Open your browser and navigate to `http://localhost:3000`.
-
----
-
-## Usage
-
-1.  Navigate to the application's URL.
-2.  In the text area, type a simple idea or context for the prompt you want to generate (e.g., "a thank you email to my team after a successful project").
-3.  Click the "Generate Prompt" button.
-4.  The application will display a detailed, well-structured prompt in the results area, ready for you to copy and use with any LLM.
+5.  Open your browser and navigate to `http://localhost:3000`
