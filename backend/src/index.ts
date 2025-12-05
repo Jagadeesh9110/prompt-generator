@@ -4,6 +4,9 @@ import dotenv from 'dotenv';
 import connectDB from './config/db';
 import intentRoutes from './routes/intentClassifierRoutes';
 import templateRoutes from './routes/templateRoutes';
+import promptAdaptationRoutes from './routes/promptAdaptationRoutes';
+import multiModelOptimizerRoutes from './routes/multiModelOptimizerRoutes';
+import evaluationRoutes from './routes/evaluationRoutes';
 
 dotenv.config();
 
@@ -19,6 +22,9 @@ connectDB();
 // Routes
 app.use('/api/intent', intentRoutes);
 app.use('/api/templates', templateRoutes);
+app.use('/api/prompt-adaptation', promptAdaptationRoutes);
+app.use('/api/multi-model-optimize', multiModelOptimizerRoutes);
+app.use('/api/evaluation', evaluationRoutes);
 
 // Basic health check
 app.get('/', (req: Request, res: Response) => {

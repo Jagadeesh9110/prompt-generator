@@ -11,7 +11,6 @@ if (!apiKey) {
 
 const genAI = new GoogleGenerativeAI(apiKey || '');
 
-export const geminiFlash = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
-export const geminiPro = genAI.getGenerativeModel({ model: 'gemini-1.5-pro' });
+export const gemini = genAI.getGenerativeModel({ model: 'gemini-1.5-pro' });
 
 export default genAI;

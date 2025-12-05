@@ -1,22 +1,22 @@
-import { geminiFlash } from '../config/gemini';
+import { gemini } from '../config/gemini';
 
 interface IntentClassification {
-    category: string;
-    subcase: string;
-    modelType: string;
-    flags: {
-        isJson: boolean;
-        isMultimodal: boolean;
-        isSearch: boolean;
-    };
-    confidence: number;
+  category: string;
+  subcase: string;
+  modelType: string;
+  flags: {
+    isJson: boolean;
+    isMultimodal: boolean;
+    isSearch: boolean;
+  };
+  confidence: number;
 }
 
 export const classifyIntent = async (text: string): Promise<IntentClassification> => {
-    try {
-        const model = geminiFlash;
+  try {
+    const model = gemini;
 
-        const systemPrompt = `
+    const systemPrompt = `
       You are an advanced Intent Classifier for a Prompt Engineering Platform.
       Analyze the user's input and classify it into the following structure:
       
@@ -38,16 +38,17 @@ export const classifyIntent = async (text: string): Promise<IntentClassification
       User Input: "${text}"
     `;
 
-        const result = await model.generateContent(systemPrompt);
-        const response = await result.response;
-        const textResponse = response.text();
+    const result = await model.generateContent(systemPrompt);
+    const response = await result.response;
+    const textResponse = response.text();
 
-        // Clean up markdown code blocks if present
-        const cleanJson = textResponse.replace(/```json/g, '').replace(/```/g, '').trim();
+    // Clean up markdown code blocks if present
+    const cleanJson = textResponse.replace(/```json/g, '').replace(/```/g, '').trim();
 
-        return JSON.parse(cleanJson) as IntentClassification;
-    } catch (error) {
-        console.error('Error in classifyIntent:', error);
-        throw new Error('Failed to classify intent');
-    }
+    return JSON.parse(cleanJson) as IntentClassification;
+  } catch (error) {
+    console.error('Error in classifyIntent:', JSON.stringify(error, null, 2));
+    if (error instanceof Error) console.error('Error Message:', error.message);
+    throw new Error('Failed to classify intent: ' + (error instanceof Error ? error.message : String(error)));
+  }
 };
