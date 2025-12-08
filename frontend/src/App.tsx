@@ -5,6 +5,11 @@ import DashboardLayout from './layouts/DashboardLayout';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import DashboardPage from './pages/DashboardPage';
+import CreatePromptPage from './pages/CreatePromptPage';
+import TemplatesPage from './pages/TemplatesPage';
+import HistoryPage from './pages/HistoryPage';
+import CompareModelsPage from './pages/CompareModelsPage';
+import SettingsPage from './pages/SettingsPage';
 import { useAppSelector } from './app/hooks';
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -23,13 +28,18 @@ const App: React.FC = () => {
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+
         </Route>
 
         {/* Protected Dashboard Routes */}
         <Route element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>
           <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/prompt/create" element={<CreatePromptPage />} />
+          <Route path="/templates" element={<TemplatesPage />} />
+          <Route path="/history" element={<HistoryPage />} />
+          <Route path="/compare" element={<CompareModelsPage />} />
+          <Route path="/settings" element={<SettingsPage />} />
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
-          {/* Add other protected routes here */}
         </Route>
       </Routes>
     </Router>
