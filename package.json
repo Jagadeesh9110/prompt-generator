@@ -1,0 +1,24 @@
+{
+  "name": "prompt-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jagadeesh9110/prompt-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jagadeesh9110/prompt-generator/issues"
+  },
+  "homepage": "https://github.com/Jagadeesh9110/prompt-generator#readme",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
